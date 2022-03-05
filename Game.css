@@ -34,10 +34,6 @@ body {
     text-align: center;
     color: white;
     font-size: 70px;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 
 }
 
@@ -48,7 +44,7 @@ body {
     border-bottom: none;
 }
 
-.buttons a {
+.buttons a,#reSet {
     background-color: white;
     text-decoration: none;
     padding: 5px;
