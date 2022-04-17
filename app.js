@@ -1,5 +1,35 @@
 
-let turn = 0;
+//Set div for show
+function PlayGame() {
+    document.querySelector('.gameStart').style.display = "flex"
+    document.querySelector('.gameMenu').style.display = "none";
+    document.querySelector('.gameScores').style.display = "none"; 
+}
+function ShowScores() {   
+    document.querySelector('.gameScores').style.display = "block"
+    document.querySelector('.gameMenu').style.display = "none";
+    document.querySelector('.gameStart').style.display = "none"; 
+}
+function ShowMenu() {
+    document.querySelector('.gameMenu').style.display = "block"
+    document.querySelector('.gameStart').style.display = "none";
+    document.querySelector('.gameScores').style.display = "none"; 
+}
+
+document.querySelector('.start').addEventListener('click', PlayGame);
+document.querySelector('.scores').addEventListener('click', ShowScores);
+document.querySelector('.backHome').addEventListener('click', ShowMenu);
+document.querySelector('.backHome2').addEventListener('click', ShowMenu)
+
+//game condition
+let turn = 0
+    
+let p1S = 0
+let p2S = 0
+    
+let Player1Score = document.getElementById('p1-score')
+let Player2Score = document.getElementById('p2-score')
+
 
 const boxes = document.querySelectorAll('.box'),
     playerEcho = document.querySelector('.playerEcho'),
@@ -52,7 +82,7 @@ function checkCols(){
         for (let row = 0; row < 3; row++) {
             isOk &= arr[row][col] == first;
             if(!isOk) 
-                break;         
+                break;
         }
         if(isOk){
             endGame(first)
@@ -92,11 +122,13 @@ function checkDiagonals2(){
 function endGame(index){
     console.log(`Winner is ${players[index]}`)
     alert(`Winner is ${players[index]}`)
+    setScores(index)
     turn = 0;
     updatePlayer();
     resetArr()
     boxes.forEach(box => box.innerText = "")
-    ReSet()
+    ShowMenu()
+
 }
 
 function resetArr(){
@@ -118,4 +150,25 @@ reSetBtn.addEventListener("click", () =>{
     ReSet()
 });
 
+
+function setScores(e){
+    if (e  == 0) {
+        
+        p1S ++;
+        localStorage.setItem("PlayerOne", p1S.toString());
+        let NOW1 = localStorage.getItem('PlayerOne')
+        
+        Player1Score.innerText = NOW1;
+        console.log(Player1Score);
+    }
+    else {
+        p2S ++;
+        localStorage.setItem("PlayerTwo", p2S.toString());
+        let NOW2 = localStorage.getItem('PlayerTwo')
+        console.log(NOW2);
+        Player2Score.innerText = NOW2;
+        console.log(Player2Score);
+    
+    }
+}
 

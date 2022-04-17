@@ -57,3 +57,88 @@ body {
 }
 
 
+/************************  *************************/
+
+.gameScores {
+    background: rgb(196, 67, 207);
+}
+
+.gameScores h2 {
+    text-align: center;
+    margin-top: 100px;
+}
+.gameScores table {
+    width: 120px;
+    height: 100px;
+    margin: 50px auto;
+    border: 1px solid black;
+}
+
+.gameScores td {
+    background: rgb(255, 255, 255);
+    border: 1px solid green;
+}
+
+.gameScores .backBTN {
+    text-align: center;
+}
+
+.gameScores a {
+    text-decoration: none;
+    border: 1px solid black;
+    color: white;
+    background-color: green;
+    margin: auto;
+}
+
+
+/***********************  *********************/
+
+.gameStart {
+    background: pink;
+}
+
+.gameMenu {
+width: 350px;
+border: 2px solid black;
+border-radius: 15px;
+margin: auto;
+margin-top: 150px;
+background: purple;
+}
+.gameMenu h1,h3 {
+text-align: center;
+margin-top: 15px;
+color: white;
+}
+
+.buttons {
+display: flex;
+flex-direction: column;
+text-align: center;
+}
+.start-btns {
+margin-top: 15px;
+}
+.start {
+padding: 5px 12px;
+}
+
+#p_vs_p {
+margin-left: 35px;
+}
+
+.buttons a {
+text-decoration: none;
+width: 120px;
+height: 30x;
+border: 1px solid black;
+color: white;
+background-color: rgb(0, 19, 128);
+margin: 15px auto;
+}
+
+
+
+
+
